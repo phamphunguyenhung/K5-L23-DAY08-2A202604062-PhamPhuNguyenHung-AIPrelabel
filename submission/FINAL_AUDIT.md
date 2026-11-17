@@ -25,7 +25,7 @@
 | img_009 | 15687 (mới) | thêm xe máy (170,470,470,840) | ảnh gốc: xe máy không có box; loại hàng nhô ra theo 4.1.5 | AI đọc ảnh, cần người duyệt |
 | img_018, img_024, img_003, img_014, img_031 | (vòng 2, trước commit `4211fb8`) | img_018 box về vị trí gốc; img_024 vẽ lại car; img_003/014/031 xoá box lỗi | xem REPORT mục 7, vòng 2 (không có file audit riêng cho vòng 2) | AI đọc ảnh + traps_key, cần người duyệt |
 
-- **img_034 #488** không sửa: vật ở xa, bánh bị khuất; không đủ rõ để xác nhận hay bỏ. Đánh dấu cần người xem lại.
+- **img_034 #488** không sửa: vật ở xa, bánh bị khuất; không đủ rõ để xác nhận hay bỏ. Sau đó người duyệt đã xác nhận giữ (xem `qc/qc_review.csv`).
 
 ## 4. Kết quả QC và số liệu (phân biệt các nguồn)
 | Mục | Kết quả | Nguồn | Ghi chú |
@@ -37,7 +37,7 @@
 | Sau QC vòng 3 (mẫu 10 ảnh, seed 42) | 3/192 đối tượng = 1,6%; 2/10 ảnh = 20% | `qc_report_auto.md` | script gợi ý REWORK |
 | Mẫu độc lập (4 ảnh, 43 đối tượng) | 1 lỗi bo_sot (img_009), đã sửa; còn lại 0/43 | `qc_review_independent.csv` | AI đọc ảnh, không phải người |
 
-**Quyết định:** Rework. Lý do: ảnh lỗi ở mẫu vòng 3 là 20% > 2%; mẫu nhỏ (cận trên 95% của tỉ lệ ảnh lỗi ≈ 51%); mẫu độc lập chưa phải lần duyệt bởi người. Không Release.
+**Quyết định:** Rework (giữ nguyên, chưa Release). Lý do: con số 2/10 ảnh = 20% > 2% là của mẫu vòng 3, đo trước khi sửa vòng 4; chưa có mẫu QC mới trên bản final 519 đối tượng do người kiểm; cận trên 95% của tỉ lệ ảnh lỗi ≈ 51% nên mẫu 10 ảnh chưa đủ để chứng minh ngưỡng 2%. Mẫu độc lập vòng 4 do AI soạn phiếu, người duyệt. Không Release.
 
 ## 5. Checker
 - `check_submission.py`: **1 LỖI**: README phải có tiêu đề `# Day 08 Lab — <MSHV> - <Họ và tên>`. Tiêu đề hiện tại đúng định dạng đề, MSHV thật `2A202604062`. Regex trong checker dùng `\d{5,}` nên không nhận MSHV có chữ. **Đây là vấn đề của validator, không phải của bài.** Không sửa checker và không đổi MSHV theo yêu cầu đề.
@@ -46,7 +46,7 @@
 ## 6. Điểm rubric (dự báo, không phải điểm chính thức)
 | Mục | Tối đa | Dự báo | Độ tin cậy | Rủi ro |
 |---|---|---|---|---|
-| 1. Cài đặt, git | 8 | 5 | trung bình | checker còn lỗi README; push chưa thực hiện |
+| 1. Cài đặt, git | 8 | 5 | trung bình | checker còn lỗi README (validator dùng `\d`, MSHV có chữ); đã push nhánh `submission` |
 | 2. Gold, label contract | 10 | 7 | cao | `can_review` không có ca thật |
 | 3. Model, recipe | 20 | 14 | trung bình | chưa thử SAM 1; chưa có ngưỡng theo lớp |
 | 4. Ngưỡng theo lớp | 8 | 5 | thấp | chỉ có `car=0.25`, không có ngưỡng riêng từng lớp |
@@ -60,12 +60,12 @@
 
 ## 7. Các mục chưa thể tự xác minh
 - Mọi box sửa trong CVAT (img_008, img_013, img_009) là ước lượng từ ảnh, cần người duyệt.
-- img_034 #488: chưa xác định lớp.
+- img_034 #488: người duyệt đã xác nhận giữ.
 - Các vật nhỏ, bị che, hoặc ở nền tối (img_005, img_017, img_022, img_029, img_004, img_033) chưa kiểm hết từng box.
 - Interactor SAM trong CVAT: chưa thử.
 - Thời gian thao tác: lấy từ mốc `updated_date` của CVAT, là ước lượng, không phải bấm giờ.
 
 ## 8. Mức độ sẵn sàng nộp
 - **Sẵn sàng về dữ liệu và số liệu:** có; mọi số liệu có nguồn và được đo lại từ export mới nhất.
-- **Chưa sẵn sàng nộp:** chưa push; checker còn 1 lỗi validator; QC vẫn là REWORK; chưa có người duyệt các phiếu do AI soạn.
-- **Cần làm trước khi nộp:** (1) người duyệt các dòng `CẦN NGƯỜI DUYỆT` trong `qc_review.csv` và `qc_review_independent.csv`; (2) quyết định về MSHV/regex README với giảng viên; (3) quyết định có push nhánh `submission` lên `origin` không.
+- **Chưa sẵn sàng nộp:** checker còn 1 lỗi validator (đã chấp nhận, không sửa); QC vẫn là REWORK; chưa có QC mới do người kiểm trên bản final.
+- **Đã làm:** người duyệt đã xác nhận các phiếu trong `qc_review.csv` và `qc_review_independent.csv`; nhánh `submission` đã push.

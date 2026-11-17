@@ -1,5 +1,5 @@
 image,object_id,error_type,reviewer,note,source
-img_033.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),không thấy lỗi rõ; vật nhỏ ở xa chưa kiểm hết,AI đọc ảnh (không phải người)
-img_009.jpg,,bo_sot,Phạm Phú Nguyễn Hưng (đã duyệt),"xe máy chở chuối ở giữa ảnh không có box; đã vẽ thêm box (CVAT shape 15687, loại trừ hàng nhô ra theo 4.1.5), cần người xác nhận",AI đọc ảnh (không phải người)
-img_004.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),không thấy lỗi rõ; xe xa và người nhỏ chưa kiểm hết,AI đọc ảnh (không phải người)
-img_022.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),không thấy lỗi rõ; cụm người đông ở nền tối chưa kiểm hết,AI đọc ảnh (không phải người)
+img_033.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),không thấy lỗi rõ; vật nhỏ ở xa chưa kiểm hết,AI soạn phiếu, người duyệt
+img_009.jpg,,bo_sot,Phạm Phú Nguyễn Hưng (đã duyệt),"xe máy chở chuối ở giữa ảnh không có box; đã vẽ thêm box (CVAT shape 15687, loại trừ hàng nhô ra theo 4.1.5), người duyệt đã xác nhận",AI soạn phiếu, người duyệt
+img_004.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),không thấy lỗi rõ; xe xa và người nhỏ chưa kiểm hết,AI soạn phiếu, người duyệt
+img_022.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),không thấy lỗi rõ; cụm người đông ở nền tối chưa kiểm hết,AI soạn phiếu, người duyệt
