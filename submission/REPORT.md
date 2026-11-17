@@ -9,7 +9,7 @@
 | person / bicycle / motorbike / car / bus / truck | <<YOLO26m>> | <<theo lớp, từ threshold_sweep>> | <<>> |
 | three_wheeler | <<YOLOE-26s, prompt: ...>> | <<>> | <<>> |
 
-- Lệnh `merge_prelabels.py` đã dùng (dán nguyên): <<>>
+- Lệnh `merge_prelabels.py` đã dùng (dán nguyên): `python scripts/merge_prelabels.py work/prelabel/yoloe_all/pre.coco.json work/prelabel/y26_all/pre.coco.json --thr "car=0.25" --conf 0.3 --iou 0.6 --split batch,gold --out work/prelabel/merged_review/pre.coco.json` (kết quả: 598 box)
 - **Phiên bản SAM bạn chọn** (SAM 1 / 2.1 / 3) và lý do: <<chất lượng mask, tốc độ, RAM, quyền truy cập>>
 - Lỗi nào **không sửa được bằng đổi ngưỡng** (ví dụ tuk-tuk bị gọi `car`)? Sửa thế nào? <<>>
 - Box **điểm cao mà sai** hoặc **điểm thấp mà đúng** (ảnh nào): <<>>
@@ -19,17 +19,20 @@
 
 | Trạng thái | Số | Tỉ lệ | Mẫu số |
 |---|---|---|---|
-| accepted | <<>> | <<>> | <<box máy>> |
-| edited | <<>> | <<>> | <<>> |
-| deleted | <<>> | <<>> | <<>> |
-| added | <<>> | <<>> | <<đối tượng sau duyệt>> |
+| accepted | 501 | 97,1% | 516 box máy |
+| edited | 4 | 0,8% | 516 box máy |
+| deleted | 11 | 2,1% | 516 box máy |
+| added | 15 | 2,9% | 520 đối tượng sau duyệt |
+
+*Nguồn: `submission/qc/review_stats.json` (vòng duyệt 1, đo lại sau khi đối chiếu bẫy; 4 trong 26 trường hợp deleted/added là đổi lớp, ghi `class_changed_info` = 4; sót thật ≈ 11; loại 18 đối tượng quanh bẫy).*
 
 - Lớp nào máy tệ nhất? Vì sao (dẫn ảnh)? <<>>
-- So với gold: precision / recall của **máy** <<>> (mẫu số: <<đối tượng gold>>)
+- So với gold: precision / recall của **máy** 43,8% / 58,2% (mẫu số: 55 đối tượng gold, 4 ảnh; TP 32, FP 41, FN 23). *Lạc quan: ngưỡng chọn trên chính gold.*
 
 ## 3. Thiên kiến tự động hóa và ảnh bẫy
 
-- Bắt bẫy: <<.../12>>; loại nào lọt: <<>>; vì sao (bạn đã bỏ bước nào của checklist)? <<>>
+- Bắt bẫy: 12/12 (100%, KTC 95%: 76–100%), ngưỡng đạt 80%. Theo loại: loose 3/3, extra 3/3, wrong_class 3/3, missing 3/3. Nguồn: `qc/review_stats.md` mục 3. Đã đối chiếu từng bẫy với `pre_traps_import.coco.json` (file nạp CVAT) và `batch_reviewed.json`.
+- Bẫy lọt: không có (0/12).
 - Accepted cao mà bắt bẫy thấp (hoặc ngược lại) nói gì về cách bạn duyệt? <<>>
 
 ## 4. Máy có đáng dùng không?
@@ -72,6 +75,7 @@ Nếu Rework / Hold, việc cần làm tiếp: <<>>
 - **Dùng AI để làm bài** (công cụ nào, việc gì, kiểm tra thế nào; "không dùng" nếu không): <<>>
 - Gold có bị nhiễm không (bạn có nhìn pre-label hay hỏi AI trước khi gán xong)? <<không / có, như sau: ...>>
 - Máy / GPU / CVAT dùng; vướng mắc cài đặt: <<>>
-- Dùng cache `data/cache/` thay vì tự chạy? <<không / có, vì ...>>
+- Dùng cache `data/cache/` thay vì tự chạy? không. Model chạy trực tiếp: YOLO26m, YOLOE-26s-seg trên Colab T4 (`--split all`), SAM 2.1 trên máy (CPU) cho 2 ảnh. Phần `run.json` trong từng thư mục `work/prelabel/*` ghi tham số chạy.
+- Máy / GPU / CVAT dùng: Windows 11, 16 GB RAM, CPU; CVAT 2.74.1 chạy Docker local; Colab T4 cho model.
 - Lỗi / bug script đã gặp (nếu có): <<>>
 - Một điều bạn làm khác lần sau: <<>>
