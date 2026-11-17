@@ -1,9 +1,9 @@
 {
  "taxonomy_version": "v1.0",
  "images": 24,
- "objects": 519,
+ "objects": 518,
  "per_class": {
-  "person": 275,
+  "person": 274,
   "motorbike": 142,
   "truck": 7,
   "bicycle": 9,
@@ -13,6 +13,7 @@
  },
  "images_replaced_by_qc_fix": [
   "img_003.jpg",
+  "img_006.jpg",
   "img_008.jpg",
   "img_009.jpg",
   "img_013.jpg",
