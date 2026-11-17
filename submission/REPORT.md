@@ -76,7 +76,11 @@
 - **Giới hạn mẫu nhỏ:** 3/5 ảnh lỗi có cận trên 95% (Wilson) là 88%. Mẫu 5 ảnh không thể chứng minh ngưỡng 2%; chỉ đủ để thấy rằng lỗi có mặt và chưa thể nói Release.
 - Script kiểm được: đủ ảnh, lớp hợp lệ, số box, tỉ lệ accepted/edited/deleted/added. Script không kiểm được: box có ôm sát vật không, lớp có đúng thực tế không, vật cả tôi lẫn máy cùng bỏ sót.
 
-**Quyết định: Rework**, ngày 2026-11-17. Lý do (cây quyết định Hold → Rework → Release): ảnh lỗi 60% vượt ngưỡng 2%, nên không Release; không có vấn đề dữ liệu hỏng hay guideline chưa rõ đến mức phải Hold.
+**Vòng 2 (sau khi sửa 4 đối tượng trong CVAT, export `labels/qc_fixed.json`, chạy lại build_release và qc_sample):** mẫu 5 ảnh, 101 đối tượng, lỗi 0/101 (0/5 ảnh). Đây là suy ra từ phiếu vòng 1 (các box còn lại không đổi), chưa phải lần kiểm mới độc lập. Script gợi ý Release, nhưng chưa đủ: 2 bẫy lọt (img_018, img_024) vẫn chưa sửa, và mẫu 5 ảnh có cận trên 95% là 43%.
+
+**Vòng 3 (sau khi sửa thêm img_018 và vẽ lại img_024 trong CVAT, export `labels/qc_fixed.json` cho 5 ảnh đã sửa, mẫu tăng lên 10 ảnh, seed 42):** 192 đối tượng, lỗi 3/192 = 1,6%; 2/10 ảnh = 20,0%. Lỗi: img_008 #104 và #105 (`sai_lop`: xe đẩy hàng, không phải ba bánh); img_013 #128 (`thua`: trùng với #129 cùng một tuk-tuk). Ảnh img_034 #488 không chắc, cần người duyệt. Cận trên 95% của tỉ lệ ảnh lỗi là 51%, mẫu vẫn nhỏ.
+
+**Quyết định: Rework (giữ nguyên, chưa Release)**, ngày 2026-11-17. Lý do: ảnh lỗi 20% (2/10) vượt ngưỡng 2%, và chưa đo lại bẫy trên batch đã sửa. Lý do (cây quyết định Hold → Rework → Release): ảnh lỗi 60% vượt ngưỡng 2%, nên không Release; không có vấn đề dữ liệu hỏng hay guideline chưa rõ đến mức phải Hold.
 Việc cần làm tiếp: (1) sửa 4 đối tượng trong CVAT: xoá img_003 #15, xoá img_031 #446, đổi img_014 #151 và #152 khỏi three_wheeler; (2) sửa img_018 và vẽ lại img_024; (3) export `submission/labels/qc_fixed.json` và chạy lại `build_release.py`, `qc_sample.py --force`, `qc_report.py`; (4) ghi vòng sau vào mục này.
 
 ## 8. Ghi chú cá nhân
