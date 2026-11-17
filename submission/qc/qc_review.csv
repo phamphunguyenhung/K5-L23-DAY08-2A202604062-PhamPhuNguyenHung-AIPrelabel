@@ -1,0 +1,7 @@
+image,object_id,error_type,reviewer,note
+img_003.jpg,15,thua,Phạm Phú Nguyễn Hưng,"three_wheeler #15 trùng cùng một xe thồ với #11: 2 box cho 1 xe"
+img_006.jpg,,khong,Phạm Phú Nguyễn Hưng,"không thấy lỗi rõ ở vật lớn; vật nhỏ (<20px) chưa kiểm hết"
+img_014.jpg,151,sai_lop,Phạm Phú Nguyễn Hưng,"three_wheeler 0.33: thực tế là người gánh hàng bằng đòn gánh, không phải xe ba bánh"
+img_014.jpg,152,sai_lop,Phạm Phú Nguyễn Hưng,"three_wheeler 0.63: thực tế là xe đẩy hàng tay, không phải xe ba bánh"
+img_031.jpg,446,thua,Phạm Phú Nguyễn Hưng,"person 0.34: thực tế là mũ/nón treo trên kệ, không phải người"
+img_035.jpg,,khong,Phạm Phú Nguyễn Hưng,"không thấy lỗi rõ; cụm xe máy đỗ xa và người nhỏ chưa kiểm hết từng box"
