@@ -19,20 +19,23 @@
 
 | Trạng thái | Số | Tỉ lệ | Mẫu số |
 |---|---|---|---|
-| accepted | 501 | 97,1% | 516 box máy |
-| edited | 4 | 0,8% | 516 box máy |
-| deleted | 11 | 2,1% | 516 box máy |
-| added | 15 | 2,9% | 520 đối tượng sau duyệt |
+| accepted | 512 | 99,2% | 516 box máy |
+| edited | 1 | 0,2% | 516 box máy |
+| deleted | 3 | 0,6% | 516 box máy |
+| added | 3 | 0,6% | 516 đối tượng sau duyệt |
 
-*Nguồn: `submission/qc/review_stats.json` (vòng duyệt 1, đo lại sau khi đối chiếu bẫy; 4 trong 26 trường hợp deleted/added là đổi lớp, ghi `class_changed_info` = 4; sót thật ≈ 11; loại 18 đối tượng quanh bẫy).*
+*Nguồn: `submission/qc/review_stats.json` (bản duyệt đạt, job 52 trong CVAT, lưu cuối 18:14; 0 trường hợp đổi lớp, sót thật ≈ 3; loại 17 đối tượng quanh bẫy).*
 
 - Lớp nào máy tệ nhất? Vì sao (dẫn ảnh)? <<>>
 - So với gold: precision / recall của **máy** 43,8% / 58,2% (mẫu số: 55 đối tượng gold, 4 ảnh; TP 32, FP 41, FN 23). *Lạc quan: ngưỡng chọn trên chính gold.*
 
 ## 3. Thiên kiến tự động hóa và ảnh bẫy
 
-- Bắt bẫy: 12/12 (100%, KTC 95%: 76–100%), ngưỡng đạt 80%. Theo loại: loose 3/3, extra 3/3, wrong_class 3/3, missing 3/3. Nguồn: `qc/review_stats.md` mục 3. Đã đối chiếu từng bẫy với `pre_traps_import.coco.json` (file nạp CVAT) và `batch_reviewed.json`.
-- Bẫy lọt: không có (0/12).
+- Bắt bẫy: 10/12 (83,3%, KTC 95%: 55–95%), ngưỡng đạt 80%. Theo loại: loose 2/3, extra 3/3, wrong_class 3/3, missing 2/3. Nguồn: `qc/review_stats.md` mục 3.
+- Bẫy lọt (2/12):
+  - img_018 (loose): box còn ở vị trí lỗi, chưa đưa về vị trí gốc (IoU với vị trí gốc 0,62).
+  - img_024 (missing): xe bị xoá khi cài bẫy nhưng chưa được vẽ lại.
+  - Nguyên nhân cần bạn xác nhận: <<bạn viết>>
 - Accepted cao mà bắt bẫy thấp (hoặc ngược lại) nói gì về cách bạn duyệt? <<>>
 
 ## 4. Máy có đáng dùng không?

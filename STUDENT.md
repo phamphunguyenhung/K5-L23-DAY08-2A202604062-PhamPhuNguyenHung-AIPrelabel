@@ -11,9 +11,9 @@
 
 ## Kết quả tóm tắt (điền cuối bài; số lấy từ `submission/qc/*`, kèm mẫu số)
 
-- Máy: accepted / edited / deleted: 501 / 4 / 11 (mẫu số: 516 box máy); added: 15 (mẫu số: 520 đối tượng)
+- Máy: accepted / edited / deleted: 512 / 1 / 3 (mẫu số: 516 box máy); added: 3 (mẫu số: 516 đối tượng)
 - So với gold: precision / recall của **máy** 43.8% / 58.2%
-- Bắt bẫy: 12/12 = 100% (đo lại với `traps_key.json` seed 7, khớp file đã nạp CVAT; số trong `review_stats.md`)
-- Thời gian: gán tay <<... phút/ảnh>>; duyệt có pre-label <<... phút/ảnh>>
+- Bắt bẫy: 10/12 = 83,3% (job 52, đo với `traps_key.json` seed 7; bẫy lọt: img_018, img_024)
+- Thời gian: gán tay 2,6 phút/ảnh (10,4 phút / 4 ảnh, mốc CVAT); duyệt có pre-label 1,5 phút/ảnh (35 phút / 24 ảnh, tính cả lần 1 không đạt: tạo task 17:39, lưu cuối 18:14)
 - Lỗi QC: <<...% theo ảnh (.../...)>>, <<...% theo đối tượng (.../...)>>
 - **Quyết định:** <<Release / Hold / Rework>> — lý do một dòng: <<...>>

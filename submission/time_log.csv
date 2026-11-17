@@ -1,2 +1,3 @@
 step,images,minutes,note
 gold_manual,4,10.4,"gan tay 4 anh gold; do moc he thong: mo job 17:13:19 -> luu cuoi 17:23:42 (CVAT job.updated_date), khong phai dong ho bam; co the cao hon thuc te neu co nghi giua chung"
+batch_review,24,35,"duyet pre-label batch 24 anh; tinh tu luc tao task batch 17:39 den luu cuoi job 52 18:14 (CVAT updated_date), gom ca lan 1 chua dat; lan 2 mo 17:55"
