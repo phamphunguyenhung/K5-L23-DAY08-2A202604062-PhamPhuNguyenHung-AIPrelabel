@@ -8,3 +8,7 @@ __pycache__/
 *.onnx
 _review/
 *.ts
+# File tạm / thừa của bài nộp
+models/*.part
+submission/_nhap/
+submission/prelabel/pre_traps_11_12.coco.json
