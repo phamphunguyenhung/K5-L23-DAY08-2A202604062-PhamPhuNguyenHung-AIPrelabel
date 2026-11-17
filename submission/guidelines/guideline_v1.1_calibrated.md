@@ -95,6 +95,8 @@ So với phiên bản 1.0, tôi đã bổ sung và làm rõ các nội dung sau:
 5. Kiểm tra vị trí bounding box và các đối tượng bị bỏ sót trong quá trình QC.
 6. Tách người khỏi mask phương tiện và xử lý các vùng phân đoạn bị lan.
 
+**Lịch sử phiên bản:** v1.0 → v1.1 (2026-11-17): bổ sung mục 1–2 và tổng hợp ở trên; không đổi quy tắc v1.0 khác.
+
 Các thay đổi được tổng hợp từ những trường hợp thực tế trong các ảnh `img_003`, `img_014`, `img_018`, `img_024` và `img_031`, đồng thời đối chiếu với các quyết định đã ghi nhận trong quá trình calibration.
 
 Riêng câu hỏi phân loại xe đạp điện vẫn chưa được chốt do chưa có ví dụ phù hợp trong mẫu kiểm tra. Tôi sẽ tiếp tục sử dụng trạng thái `can_review` cho trường hợp này.

@@ -1,0 +1,6 @@
+image,nguon,ket_qua,ghi_chu
+img_006.jpg,AI xem ảnh (không phải người),khong_thay_loi_ro,"25 đối tượng; người và xe máy đông ở nền, nhiều box chồng nhau (#67/#71/#73/#78/#90) chưa kiểm từng box"
+img_013.jpg,AI xem ảnh (không phải người),khong_thay_loi_ro,"12 đối tượng; tuk-tuk #129 phủ đủ xe, #128 không trùng; người ngồi trong xe và xe máy phía sau chưa kiểm hết"
+img_018.jpg,AI xem ảnh (không phải người),khong_thay_loi_ro,"53 đối tượng; ảnh rất nhiều vật nhỏ (<20px, đã cảnh báo trong validate_labels); chỉ kiểm mức tổng quan"
+img_022.jpg,AI xem ảnh (không phải người),khong_thay_loi_ro,"15 đối tượng; ảnh tối, người nền và xe máy nhỏ chưa kiểm từng box"
+img_023.jpg,AI xem ảnh (không phải người),khong_thay_loi_ro,"10 đối tượng; ba tuk-tuk gán three_wheeler, khớp taxonomy; xe ô tô #266/#269 gán car đúng"

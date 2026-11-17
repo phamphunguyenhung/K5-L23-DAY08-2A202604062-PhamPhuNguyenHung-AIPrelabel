@@ -82,8 +82,11 @@
 
 **Vòng 4 (sửa CVAT lần cuối và mẫu độc lập):** xoá img_008 #104, #105 (xe đẩy hàng hai bánh) và img_013 #128 (trùng với #129); kéo #129 phủ đủ tuk-tuk. Đã kiểm tra bằng ảnh gốc và đọc lại CVAT (xem `qc/cvat_audit_round3.csv`). Mẫu độc lập gồm 4 ảnh chưa từng kiểm (img_004, img_009, img_022, img_033; 43 đối tượng, chọn bằng random seed 42): img_009 thiếu một xe máy, đã vẽ thêm; sau sửa lỗi 0/43 (AI đọc ảnh, không phải người duyệt). Bản final mới: 519 đối tượng (`labels/final_round3_export.json`); bản vòng 1 vẫn giữ nguyên (`labels/batch_reviewed.json`). Bẫy đo lại trên bản final: 12/12, nhưng đây là sau khi đã sửa img_018 và img_024 nên không dùng để đánh giá năng lực duyệt ban đầu (vòng 1 vẫn 10/12).
 
-**Quyết định: Rework (giữ nguyên, chưa Release)**, ngày 2026-11-17. Lý do: ảnh lỗi 20% (2/10) vượt ngưỡng 2%, và chưa đo lại bẫy trên batch đã sửa. Lý do (cây quyết định Hold → Rework → Release): ảnh lỗi 60% vượt ngưỡng 2%, nên không Release; không có vấn đề dữ liệu hỏng hay guideline chưa rõ đến mức phải Hold.
-Việc cần làm tiếp: (1) sửa 4 đối tượng trong CVAT: xoá img_003 #15, xoá img_031 #446, đổi img_014 #151 và #152 khỏi three_wheeler; (2) sửa img_018 và vẽ lại img_024; (3) export `submission/labels/qc_fixed.json` và chạy lại `build_release.py`, `qc_sample.py --force`, `qc_report.py`; (4) ghi vòng sau vào mục này.
+**Quyết định: Rework (giữ nguyên, chưa Release)**, ngày 2026-11-17. Lý do: con số 2/10 ảnh = 20% > 2% là của mẫu vòng 3, đo trước khi sửa vòng 4; chưa có mẫu QC mới trên bản final 519 đối tượng do người kiểm; cận trên 95% của tỉ lệ ảnh lỗi ≈ 51% nên mẫu 10 ảnh chưa đủ để chứng minh ngưỡng 2%. Không có vấn đề dữ liệu hỏng hay guideline chưa rõ đến mức phải Hold.
+
+**Mẫu QC mới trên bản final (seed 2026):** 10 ảnh, 219 đối tượng (`qc/qc_sample.csv`). Phiếu người kiểm chưa được điền, nên trạng thái là **Pending Human QC**. Kiểm AI sơ bộ 5 ảnh (img_006, img_013, img_018, img_022, img_023) trong `qc/qc_ai_spotcheck_final.csv`: không thấy lỗi lớp rõ ràng, nhưng đây là AI xem ảnh, không phải người, và chưa kiểm từng box.
+
+Việc còn lại: (1) người kiểm điền phiếu mới cho mẫu seed 2026 vào một file riêng, ví dụ `qc/qc_review_final_seed2026.csv` (không ghi đè `qc_review.csv`, vì file đó vẫn là phiếu vòng 3–4); (2) chạy `qc_report.py` để tính tỉ lệ rework mới; (3) nếu tỉ lệ ảnh lỗi ≤ 2% thì mới xét Release.
 
 ## 8. Ghi chú cá nhân
 
