@@ -4,7 +4,7 @@
 **Họ và tên:** Phạm Phú Nguyễn Hưng  
 **Mã học viên:** 2A202604062
 
-### 1. Các nội dung được cập nhật từ phiên bản 1.0
+## 1. Các nội dung được cập nhật từ phiên bản 1.0
 
 Sau khi thực hiện gán nhãn và kiểm tra chất lượng dữ liệu, tôi đã rà soát lại một số trường hợp chưa được quy định rõ trong phiên bản 1.0. Dựa trên các ảnh thực tế và kết quả kiểm tra, tôi bổ sung các quyết định sau:
 
@@ -26,7 +26,7 @@ Trong các ảnh `img_014` và `img_031` (CAL-01), mô hình nhận diện nhầ
 
 Tôi bổ sung quy định không sử dụng nhãn `three_wheeler` cho các phương tiện đẩy tay hoặc vật dụng vận chuyển không thuộc định nghĩa của lớp này. Nếu đối tượng không phù hợp với bất kỳ lớp nào trong bộ nhãn thì không tạo bounding box.
 
-### 2. Các quy tắc bổ sung sau quá trình kiểm tra
+## 2. Các quy tắc bổ sung sau quá trình kiểm tra
 
 Qua kiểm tra kết quả gán nhãn tự động, tôi ghi nhận một số lỗi của mô hình và những trường hợp bản thân còn bỏ sót. Từ đó, tôi bổ sung các quy tắc sau để việc gán nhãn được nhất quán hơn.
 
@@ -84,7 +84,7 @@ Tôi bổ sung bước quan sát toàn bộ ảnh để tìm đối tượng tr�
 
 Quy tắc này được bổ sung vào mục 4.2, quy tắc 5.
 
-### 3. Tổng kết thay đổi
+## 3. Tổng kết thay đổi
 
 So với phiên bản 1.0, tôi đã bổ sung và làm rõ các nội dung sau:
 
@@ -99,7 +99,7 @@ Các thay đổi được tổng hợp từ những trường hợp thực tế 
 
 Riêng câu hỏi phân loại xe đạp điện vẫn chưa được chốt do chưa có ví dụ phù hợp trong mẫu kiểm tra. Tôi sẽ tiếp tục sử dụng trạng thái `can_review` cho trường hợp này.
 
-### 4. Kết luận
+## 4. Kết luận
 
 Qua quá trình thực hiện, tôi nhận thấy mô hình tự động giúp giảm đáng kể công việc gán nhãn ban đầu, nhưng vẫn có thể nhận diện nhầm đối tượng, tạo box trùng, bỏ sót phương tiện hoặc phân đoạn sai ranh giới.
 

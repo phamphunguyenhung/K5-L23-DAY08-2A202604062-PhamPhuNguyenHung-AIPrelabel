@@ -1,0 +1,9 @@
+{
+ "method": "random.Random(42).sample over batch images never shown in earlier QC samples",
+ "images": [
+  "img_033.jpg",
+  "img_009.jpg",
+  "img_004.jpg",
+  "img_022.jpg"
+ ]
+}

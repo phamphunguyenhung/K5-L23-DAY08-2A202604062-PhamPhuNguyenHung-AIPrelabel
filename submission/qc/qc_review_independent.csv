@@ -1,0 +1,5 @@
+image,object_id,error_type,reviewer,note,source
+img_033.jpg,,khong,CẦN NGƯỜI DUYỆT,"không thấy lỗi rõ; vật nhỏ ở xa chưa kiểm hết",AI đọc ảnh (không phải người)
+img_009.jpg,,bo_sot,CẦN NGƯỜI DUYỆT,"xe máy chở chuối ở giữa ảnh không có box; đã vẽ thêm box (CVAT shape 15687, loại trừ hàng nhô ra theo 4.1.5), cần người xác nhận",AI đọc ảnh (không phải người)
+img_004.jpg,,khong,CẦN NGƯỜI DUYỆT,"không thấy lỗi rõ; xe xa và người nhỏ chưa kiểm hết",AI đọc ảnh (không phải người)
+img_022.jpg,,khong,CẦN NGƯỜI DUYỆT,"không thấy lỗi rõ; cụm người đông ở nền tối chưa kiểm hết",AI đọc ảnh (không phải người)
