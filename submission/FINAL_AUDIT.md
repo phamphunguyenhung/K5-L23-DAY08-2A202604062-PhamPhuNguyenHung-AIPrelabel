@@ -35,7 +35,7 @@
 | Bẫy trên bản final | 12/12 | `qc/review_stats_round3.md` | sau khi đã sửa img_018, img_024 — không phải năng lực duyệt ban đầu |
 | Gold (máy so với gold) | TP 32, FP 41, FN 23; precision 43,8%, recall 58,2% | `review_stats*` | khớp số gốc |
 | Sau QC vòng 3 (mẫu 10 ảnh, seed 42) | 3/192 đối tượng = 1,6%; 2/10 ảnh = 20% | `qc_report_auto.md` | script gợi ý REWORK |
-| Mẫu độc lập (4 ảnh, 43 đối tượng) | 1 lỗi bo_sot (img_009), đã sửa; còn lại 0/43 | `qc_review_independent.csv` | AI đọc ảnh, không phải người |
+| Mẫu độc lập (4 ảnh, 43 đối tượng) | 1 lỗi bo_sot (img_009), đã sửa; còn lại 0/43 | `REPORT.md` mục 7 vòng 4 (file CSV đã thay bằng bảng AI seed 2026) | AI đọc ảnh, không phải người |
 
 **Quyết định:** Rework (giữ nguyên, chưa Release). Lý do: con số 2/10 ảnh = 20% > 2% là của mẫu vòng 3, đo trước khi sửa vòng 4; chưa có mẫu QC mới trên bản final 519 đối tượng do người kiểm; cận trên 95% của tỉ lệ ảnh lỗi ≈ 51% nên mẫu 10 ảnh chưa đủ để chứng minh ngưỡng 2%. Mẫu độc lập vòng 4 do AI soạn phiếu, người duyệt. Không Release.
 
@@ -68,4 +68,4 @@
 ## 8. Mức độ sẵn sàng nộp
 - **Sẵn sàng về dữ liệu và số liệu:** có; mọi số liệu có nguồn và được đo lại từ export mới nhất.
 - **Chưa sẵn sàng nộp:** checker còn 1 lỗi validator (đã chấp nhận, không sửa); QC vẫn là REWORK; chưa có QC mới do người kiểm trên bản final.
-- **Đã làm:** người duyệt đã xác nhận các phiếu trong `qc_review.csv` và `qc_review_independent.csv`; nhánh `submission` đã push.
+- **Đã làm:** người duyệt đã xác nhận các phiếu trong `qc_review.csv`; `qc_review_independent.csv` hiện là bảng AI seed 2026 (chưa có người duyệt, trừ img_006); nhánh `submission` đã push.
