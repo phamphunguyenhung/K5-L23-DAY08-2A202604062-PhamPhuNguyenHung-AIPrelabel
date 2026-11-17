@@ -1,12 +1,12 @@
 image,object_id,error_type,reviewer,note
-img_003.jpg,,khong,CẦN NGƯỜI DUYỆT,vòng 2: đã sửa 1 box trùng (vòng 1: thua)
-img_005.jpg,,khong,CẦN NGƯỜI DUYỆT,đám đông dày; vật nhỏ và bị che chưa kiểm hết từng box
-img_006.jpg,,khong,CẦN NGƯỜI DUYỆT,vòng 2: không đổi so với vòng 1; vật nhỏ chưa kiểm hết
-img_008.jpg,104,sai_lop,CẦN NGƯỜI DUYỆT,"three_wheeler 0.86: xe đẩy hàng hai bánh, không phải xe ba bánh; ĐÃ XÓA trong CVAT (audit cvat_audit_round3.csv)"
-img_008.jpg,105,sai_lop,CẦN NGƯỜI DUYỆT,"three_wheeler 0.90: xe đẩy chở chuối, không có động cơ, không phải xe ba bánh; ĐÃ XÓA trong CVAT (audit cvat_audit_round3.csv)"
-img_013.jpg,128,thua,CẦN NGƯỜI DUYỆT,three_wheeler 0.67 khoanh cùng một xe tuk-tuk với #129; ĐÃ XÓA trong CVAT (audit cvat_audit_round3.csv)
-img_014.jpg,,khong,CẦN NGƯỜI DUYỆT,vòng 2: đã sửa 2 box xe đẩy/gánh (vòng 1: sai_lop)
-img_017.jpg,,khong,CẦN NGƯỜI DUYỆT,"không thấy lỗi rõ; hai tuk-tuk phía sau nhỏ, chưa kiểm kỹ"
-img_029.jpg,,khong,CẦN NGƯỜI DUYỆT,"cảnh ban đêm, rất đông xe máy; không kiểm hết các box nhỏ"
-img_031.jpg,,khong,CẦN NGƯỜI DUYỆT,vòng 2: đã sửa 1 box mũ (vòng 1: thua)
+img_003.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),vòng 2: đã sửa 1 box trùng (vòng 1: thua)
+img_005.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),đám đông dày; vật nhỏ và bị che chưa kiểm hết từng box
+img_006.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),vòng 2: không đổi so với vòng 1; vật nhỏ chưa kiểm hết
+img_008.jpg,104,sai_lop,Phạm Phú Nguyễn Hưng (đã duyệt),"three_wheeler 0.86: xe đẩy hàng hai bánh, không phải xe ba bánh; ĐÃ XÓA trong CVAT (audit cvat_audit_round3.csv)"
+img_008.jpg,105,sai_lop,Phạm Phú Nguyễn Hưng (đã duyệt),"three_wheeler 0.90: xe đẩy chở chuối, không có động cơ, không phải xe ba bánh; ĐÃ XÓA trong CVAT (audit cvat_audit_round3.csv)"
+img_013.jpg,128,thua,Phạm Phú Nguyễn Hưng (đã duyệt),three_wheeler 0.67 khoanh cùng một xe tuk-tuk với #129; ĐÃ XÓA trong CVAT (audit cvat_audit_round3.csv)
+img_014.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),vòng 2: đã sửa 2 box xe đẩy/gánh (vòng 1: sai_lop)
+img_017.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),"không thấy lỗi rõ; hai tuk-tuk phía sau nhỏ, chưa kiểm kỹ"
+img_029.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),"cảnh ban đêm, rất đông xe máy; không kiểm hết các box nhỏ"
+img_031.jpg,,khong,Phạm Phú Nguyễn Hưng (đã duyệt),vòng 2: đã sửa 1 box mũ (vòng 1: thua)
 img_034.jpg,,khong,CẦN NGƯỜI DUYỆT,không chắc #488 (three_wheeler 0.85) ở xa; cần người xem lại
