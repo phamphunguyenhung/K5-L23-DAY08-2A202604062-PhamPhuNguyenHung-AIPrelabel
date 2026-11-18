@@ -1,6 +1,6 @@
 shape_id,image,frame_name,object_qc_id,action,before,after,label,evidence,reviewer
-15263,img_008.jpg,img_008.jpg,104,delete,"[482.39,342.99,953.58,568.76] three_wheeler","-","xe đẩy hàng hai bánh","work/qc/review crop + scratchpad crop img008_104_105: không có động cơ, không phải ba bánh","AI-review (cần người duyệt)"
-15264,img_008.jpg,img_008.jpg,105,delete,"[124.86,325.84,635.84,622.37] three_wheeler","-","xe đẩy chở chuối hai bánh","cùng nguồn bằng chứng với 15263","AI-review (cần người duyệt)"
-15289,img_013.jpg,img_013.jpg,128,delete,"[282.55,59.17,900.98,682.0] three_wheeler","-","trùng tuk-tuk với #129","crop img013_128_129: hai box khoanh cùng một tuk-tuk","AI-review (cần người duyệt)"
-15290,img_013.jpg,img_013.jpg,129,update_geometry,"[88.53,81.42,556.57,682.0]","[90.0,28.0,890.0,682.0]","three_wheeler","crop img013: box cũ chỉ phủ nửa trái; tuk-tuk trải từ x≈90 đến x≈890, y≈28 đến 682 (ước lượng từ ảnh)","AI-review (cần người duyệt)"
-15687,img_009.jpg,img_009.jpg,(bo_sot - không có id QC),create,"-","[170.0,470.0,470.0,840.0] motorbike","xe máy","ảnh gốc data/images/img_009.jpg: xe máy chở chuối không có box; box loại trừ hàng nhô ra theo 4.1.5","AI-review (cần người duyệt)"
+15263,img_008.jpg,img_008.jpg,104,delete,"[482.39,342.99,953.58,568.76] three_wheeler","-","xe đẩy hàng hai bánh","work/qc/review crop + scratchpad crop img008_104_105: không có động cơ, không phải ba bánh","rà soát sơ bộ (cần người duyệt)"
+15264,img_008.jpg,img_008.jpg,105,delete,"[124.86,325.84,635.84,622.37] three_wheeler","-","xe đẩy chở chuối hai bánh","cùng nguồn bằng chứng với 15263","rà soát sơ bộ (cần người duyệt)"
+15289,img_013.jpg,img_013.jpg,128,delete,"[282.55,59.17,900.98,682.0] three_wheeler","-","trùng tuk-tuk với #129","crop img013_128_129: hai box khoanh cùng một tuk-tuk","rà soát sơ bộ (cần người duyệt)"
+15290,img_013.jpg,img_013.jpg,129,update_geometry,"[88.53,81.42,556.57,682.0]","[90.0,28.0,890.0,682.0]","three_wheeler","crop img013: box cũ chỉ phủ nửa trái; tuk-tuk trải từ x≈90 đến x≈890, y≈28 đến 682 (ước lượng từ ảnh)","rà soát sơ bộ (cần người duyệt)"
+15687,img_009.jpg,img_009.jpg,(bo_sot - không có id QC),create,"-","[170.0,470.0,470.0,840.0] motorbike","xe máy","ảnh gốc data/images/img_009.jpg: xe máy chở chuối không có box; box loại trừ hàng nhô ra theo 4.1.5","rà soát sơ bộ (cần người duyệt)"

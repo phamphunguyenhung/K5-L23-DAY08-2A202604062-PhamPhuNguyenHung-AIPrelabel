@@ -16,7 +16,7 @@
 - Box điểm cao mà sai: img_003 #15 (three_wheeler 0,90) vẽ trùng với #11 cùng một xe thồ. Box điểm thấp mà sai: img_031 #446 (person 0,34) là mũ treo trên kệ.
 - Giới hạn: ngưỡng chọn trên chính gold (4 ảnh) nên số đo của máy trên gold là lạc quan.
 
-## 2. AI error profile (từ `qc/review_stats.md`)
+## 2. Hồ sơ lỗi tiền gán nhãn (từ `qc/review_stats.md`)
 
 | Trạng thái | Số | Tỉ lệ | Mẫu số |
 |---|---|---|---|
@@ -70,7 +70,7 @@
 ## 7. QC và quyết định (Part 6)
 
 - Mẫu: 5 ảnh (0 ảnh `can_review` + 5 ngẫu nhiên, seed 42): img_003, img_006, img_014, img_031, img_035; 105 đối tượng.
-- Người kiểm: tôi. Phiếu được soạn trước bởi AI rồi tôi đã duyệt. Đây là **hạn chế**: người vừa duyệt nhãn cũng là người kiểm mẫu; vật nhỏ (< 20 px) chưa được kiểm hết.
+- Người kiểm: tôi. Phiếu sơ bộ được soạn trước rồi tôi đã duyệt. Đây là **hạn chế**: người vừa duyệt nhãn cũng là người kiểm mẫu; vật nhỏ (< 20 px) chưa được kiểm hết.
 - Lỗi theo **đối tượng**: 4/105 = 3,8% · theo **ảnh**: 3/5 = 60,0% (ngưỡng Release ≤ 2%).
 - Top lỗi: thừa 2 (img_003 #15, img_031 #446), sai lớp 2 (img_014 #151, #152). Ví dụ: img_003 cho thừa, img_014 cho sai lớp. Không có lỗi sai vị trí, sai thuộc tính hay sai mask trong mẫu này.
 - **Giới hạn mẫu nhỏ:** 3/5 ảnh lỗi có cận trên 95% (Wilson) là 88%. Mẫu 5 ảnh không thể chứng minh ngưỡng 2%; chỉ đủ để thấy rằng lỗi có mặt và chưa thể nói Release.
@@ -80,19 +80,19 @@
 
 **Vòng 3 (sau khi sửa thêm img_018 và vẽ lại img_024 trong CVAT, export `labels/qc_fixed.json` cho 5 ảnh đã sửa, mẫu tăng lên 10 ảnh, seed 42):** 192 đối tượng, lỗi 3/192 = 1,6%; 2/10 ảnh = 20,0%. Lỗi: img_008 #104 và #105 (`sai_lop`: xe đẩy hàng, không phải ba bánh); img_013 #128 (`thua`: trùng với #129 cùng một tuk-tuk). Ảnh img_034 #488 lúc đó chưa chắc; sau đó người duyệt đã xác nhận giữ (xem `qc/qc_review.csv`). Cận trên 95% của tỉ lệ ảnh lỗi là 51%, mẫu vẫn nhỏ.
 
-**Vòng 4 (sửa CVAT lần cuối và mẫu độc lập):** xoá img_008 #104, #105 (xe đẩy hàng hai bánh) và img_013 #128 (trùng với #129); kéo #129 phủ đủ tuk-tuk. Đã kiểm tra bằng ảnh gốc và đọc lại CVAT (xem `qc/cvat_audit_round3.csv`). Mẫu độc lập gồm 4 ảnh chưa từng kiểm (img_004, img_009, img_022, img_033; 43 đối tượng, chọn bằng random seed 42): img_009 thiếu một xe máy, đã vẽ thêm; sau sửa lỗi 0/43 (AI đọc ảnh, không phải người duyệt). Phiếu mẫu 4 ảnh này là bản gốc trong commit `d2ca07b`. File `qc/qc_review_independent.csv` hiện là bảng AI 10 ảnh seed 2026, do người duyệt xác nhận bảng AI đó, không phải phiếu QC độc lập của người. Bản final mới: 519 đối tượng (`labels/final_round3_export.json`); bản vòng 1 vẫn giữ nguyên (`labels/batch_reviewed.json`). Bẫy đo lại trên bản final: 12/12, nhưng đây là sau khi đã sửa img_018 và img_024 nên không dùng để đánh giá năng lực duyệt ban đầu (vòng 1 vẫn 10/12).
+**Vòng 4 (sửa CVAT lần cuối và mẫu độc lập):** xoá img_008 #104, #105 (xe đẩy hàng hai bánh) và img_013 #128 (trùng với #129); kéo #129 phủ đủ tuk-tuk. Đã kiểm tra bằng ảnh gốc và đọc lại CVAT (xem `qc/cvat_audit_round3.csv`). Mẫu độc lập gồm 4 ảnh chưa từng kiểm (img_004, img_009, img_022, img_033; 43 đối tượng, chọn bằng random seed 42): img_009 thiếu một xe máy, đã vẽ thêm; sau sửa lỗi 0/43 (kiểm tra sơ bộ từ ảnh, không phải người duyệt). Phiếu mẫu 4 ảnh này là bản gốc trong commit `d2ca07b`. File `qc/qc_review_independent.csv` hiện là bảng rà soát sơ bộ 10 ảnh seed 2026, do người duyệt xác nhận bảng đó, không phải phiếu QC độc lập của người. Bản final mới: 519 đối tượng (`labels/final_round3_export.json`); bản vòng 1 vẫn giữ nguyên (`labels/batch_reviewed.json`). Bẫy đo lại trên bản final: 12/12, nhưng đây là sau khi đã sửa img_018 và img_024 nên không dùng để đánh giá năng lực duyệt ban đầu (vòng 1 vẫn 10/12).
 
 **Vòng 5 (xoá trùng):** xoá img_006 #68 (person 0.35, nằm gần trọn trong #69 cùng một người; IoU ≈ 0.43). Release sau sửa: **518 đối tượng** (`release/final_det.coco.json`, `release_summary.csv`); bản `labels/final_round3_export.json` và `labels/qc_fixed.json` cũng đã cập nhật tương ứng. So với bản 519 cũ, chỉ khác đúng box này. Lưu ý: job CVAT 52 vẫn còn box này cho đến khi xoá tay trong CVAT. Mục số 519 ở các vòng trên là số liệu lịch sử.
 
 **Quyết định: Rework (giữ nguyên, chưa Release)**, ngày 2026-11-17. Lý do: con số 2/10 ảnh = 20% > 2% là của mẫu vòng 3, đo trước khi sửa vòng 4; chưa có mẫu QC mới trên bản final 519 đối tượng do người kiểm; cận trên 95% của tỉ lệ ảnh lỗi ≈ 51% nên mẫu 10 ảnh chưa đủ để chứng minh ngưỡng 2%. Không có vấn đề dữ liệu hỏng hay guideline chưa rõ đến mức phải Hold.
 
-**Mẫu QC mới trên bản final (seed 2026):** 10 ảnh, 219 đối tượng (`qc/qc_sample.csv`). Phiếu người kiểm là `qc/qc_review_final_seed2026.csv`. Trạng thái: người dùng đã duyệt cả 10 ảnh ở mức **Reviewed** (xác nhận bảng AI). Tuy nhiên ghi chú từng dòng của phiếu cho biết các box còn lại chưa có bằng chứng kiểm tra từng box, nên đây không phải QC từng box và không tạo ra tỉ lệ lỗi mới để tính ngưỡng. Release vẫn **chưa đạt**. Ứng viên cần xem lại (ảnh phóng to có ID): `work/qc/candidates/` (5 ảnh). Lưu ý: ID trong `work/qc/review/` vẽ trước khi xoá #68 nên lệch 1 sau img_006; dùng ID trong `release/final_det.coco.json` hiện tại. Bảng AI đầy đủ 10 ảnh: `qc/qc_ai_review_final_seed2026.csv`. Người dùng đã duyệt bảng AI này (`qc/qc_review_independent.csv`, `da_duyet`), nhưng đây là duyệt nội dung AI, không phải QC từng box; 9 ảnh vẫn **Pending Human Review** trong phiếu người duyệt.
+**Mẫu QC mới trên bản final (seed 2026):** 10 ảnh, 219 đối tượng (`qc/qc_sample.csv`). Phiếu người kiểm là `qc/qc_review_final_seed2026.csv`. Trạng thái: người dùng đã duyệt cả 10 ảnh ở mức **Reviewed** (đã xác nhận bảng rà soát sơ bộ). Tuy nhiên ghi chú từng dòng của phiếu cho biết các box còn lại chưa có bằng chứng kiểm tra từng box, nên đây không phải QC từng box và không tạo ra tỉ lệ lỗi mới để tính ngưỡng. Release vẫn **chưa đạt**. Ứng viên cần xem lại (ảnh phóng to có ID): `work/qc/candidates/` (5 ảnh). Lưu ý: ID trong `work/qc/review/` vẽ trước khi xoá #68 nên lệch 1 sau img_006; dùng ID trong `release/final_det.coco.json` hiện tại. Bảng rà soát sơ bộ đầy đủ 10 ảnh: `qc/qc_ai_review_final_seed2026.csv`. Người dùng đã duyệt bảng rà soát sơ bộ này (`qc/qc_review_independent.csv`, `da_duyet`), nhưng đây chỉ là duyệt nội dung bảng tổng hợp, không phải QC từng box; 9 ảnh vẫn **Pending Human Review** trong phiếu người duyệt.
 
 Việc còn lại: (1) người kiểm điền phiếu mới cho mẫu seed 2026 vào một file riêng, ví dụ `qc/qc_review_final_seed2026.csv` (không ghi đè `qc_review.csv`, vì file đó vẫn là phiếu vòng 3–4); (2) chạy `qc_report.py` để tính tỉ lệ rework mới; (3) nếu tỉ lệ ảnh lỗi ≤ 2% thì mới xét Release.
 
 ## 8. Ghi chú cá nhân
 
-- **Dùng AI để làm bài:** Claude (Claude Code) soạn nháp phiếu QC, calibration, guideline v1.1, `model_log.csv` và báo cáo này từ số liệu trong repo và các file CVAT. Tôi đã đọc và duyệt từng phần. Mask SAM chạy bằng `scripts/sam2_points.py` trên CPU, không chạy Colab. Số liệu được kiểm bằng `review_stats.py`, `qc_report.py` và `check_submission.py`.
+- **Công cụ hỗ trợ soạn nháp:** Claude (Claude Code) soạn nháp phiếu QC, calibration, guideline v1.1, `model_log.csv` và báo cáo này từ số liệu trong repo và các file CVAT. Tôi đã đọc và duyệt từng phần. Mask SAM chạy bằng `scripts/sam2_points.py` trên CPU, không chạy Colab. Số liệu được kiểm bằng `review_stats.py`, `qc_report.py` và `check_submission.py`.
 - Gold có bị nhiễm không: không. Gold gán trước (file `gold_manual.json` lưu lúc 17:24), còn pre-label và pre-traps được tạo sau mốc đó.
 - Máy / GPU / CVAT: Windows 11, 16 GB RAM, CPU cho SAM; GPU CUDA cho YOLO26 và YOLOE (chạy trên Colab T4 theo `run.json`); CVAT 2.74.1 chạy Docker local. Dùng cache `data/cache/`: không, model chạy trực tiếp.
 - Lỗi / bug script đã gặp: API CVAT cần header `Authorization: Bearer <token>`, không phải `Token`; đây là điều tôi đã sai khi thử đọc job lúc đầu. Export COCO từ CVAT phải lấy `result_url` của request rồi mới tải được file.
