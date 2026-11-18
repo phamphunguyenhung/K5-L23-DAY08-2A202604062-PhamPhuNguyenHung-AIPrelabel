@@ -35,7 +35,7 @@
 | Bẫy trên bản final | 12/12 | `qc/review_stats_round3.md` | sau khi đã sửa img_018, img_024 — không phải năng lực duyệt ban đầu |
 | Gold (máy so với gold) | TP 32, FP 41, FN 23; precision 43,8%, recall 58,2% | `review_stats*` | khớp số gốc |
 | Sau QC vòng 3 (mẫu 10 ảnh, seed 42) | 3/192 đối tượng = 1,6%; 2/10 ảnh = 20% | `qc_report_auto.md` | script gợi ý REWORK |
-| Mẫu độc lập (4 ảnh, 43 đối tượng) | 1 lỗi bo_sot (img_009), đã sửa; còn lại 0/43 | `qc_review_independent.csv` | AI đọc ảnh, không phải người |
+| Mẫu độc lập (4 ảnh, 43 đối tượng) | 1 lỗi bo_sot (img_009), đã sửa; còn lại 0/43 | Bản gốc trong commit `d2ca07b` (`qc_review_independent.csv` hiện là bảng AI 10 ảnh) | AI đọc ảnh, không phải người |
 
 **Quyết định:** Rework (giữ nguyên, chưa Release). Lý do: con số 2/10 ảnh = 20% > 2% là của mẫu vòng 3, đo trước khi sửa vòng 4; chưa có mẫu QC mới trên bản final 519 đối tượng do người kiểm; cận trên 95% của tỉ lệ ảnh lỗi ≈ 51% nên mẫu 10 ảnh chưa đủ để chứng minh ngưỡng 2%. Mẫu độc lập vòng 4 do AI soạn phiếu, người duyệt. Không Release.
 
