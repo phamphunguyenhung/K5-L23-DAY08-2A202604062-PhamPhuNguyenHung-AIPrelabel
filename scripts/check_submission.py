@@ -45,7 +45,7 @@ def main() -> None:
     if tax.rules != EXPECTED_RULES:
         E("taxonomy.json: mục `rules` bị đổi so với bản gốc (RULES.md: không được đổi ngưỡng)")
     rd = (ROOT / "README.md").read_text(encoding="utf8") if (ROOT / "README.md").exists() else ""
-    m = re.search(r"^#\s*Day 08 Lab\s*[—-]\s*(\d{5,})\s*-\s*\S+", rd, flags=re.M)
+    m = re.search(r"^#\s*Day 08 Lab\s*[—-]\s*([0-9A-Za-z]{5,})\s*-\s*\S+", rd, flags=re.M)
     mshv = m.group(1) if m else None
     if not m:
         E("README.md phải có dòng tiêu đề: `# Day 08 Lab — <MSHV> - <Họ và tên>` (xem SUBMISSION.md)")

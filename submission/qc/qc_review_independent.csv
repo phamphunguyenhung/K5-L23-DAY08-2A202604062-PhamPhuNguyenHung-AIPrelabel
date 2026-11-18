@@ -1,11 +1,11 @@
 image,so_doi_tuong_mau,nguon,ket_qua_ai,ghi_chu_ai
-img_006.jpg,24 (sau khi xóa #68),AI hỗ trợ rà soát; người duyệt đã xác nhận 4 box nghi ngờ,khong_thay_loi_ro,"4 box nghi ngờ: motorbike 0.33, person 0.52, person 0.60, person 0.42 mép phải; người duyệt đã xác nhận giữ cả 4"
-img_013.jpg,12,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"tuk-tuk #129 phủ đủ xe; #128 không trùng; người ngồi trong xe và xe máy phía sau chưa kiểm hết"
-img_018.jpg,53,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"nhiều vật nhỏ <20px đã cảnh báo trong validate_labels; chỉ kiểm mức tổng quan"
-img_022.jpg,15,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"ảnh tối; người nền và xe máy nhỏ chưa kiểm từng box"
-img_023.jpg,10,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"ba tuk-tuk gán three_wheeler, khớp taxonomy; ô tô #266 và #269 gán car đúng"
-img_025.jpg,18,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"nhiều box người nhỏ chồng nhau ở giữa (#324, #330, #334, #335); chưa kiểm từng box"
-img_026.jpg,14,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"ảnh ban đêm nhiều xe máy che nhau; #344 person 0.58 và #345 person 0.55 nhỏ, khó xác nhận"
-img_027.jpg,23,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"người lái và xe máy gán tách riêng, khớp guideline; box người ở xa và nhỏ (#355, #358, #370) chưa kiểm hết"
-img_033.jpg,16,AI hỗ trợ rà soát; chờ người duyệt xác nhận,khong_thay_loi_ro,"ô tô #455, #459, #460 gán car đúng; #453 bị cắt ở mép ảnh; cụm xe máy xa (#454, #456, #457) chưa kiểm từng box"
-img_035.jpg,33,AI hỗ trợ rà soát; chờ người duyệt xác nhận,can_nguoi_xem,"#508 three_wheeler 0.48 là xe xích lô, cần đối chiếu guideline three_wheeler; cụm người và xe máy chồng nhiều (#503, #505, #509, #518, #519) chưa kiểm từng box"
+img_006.jpg,24 (sau khi xóa #68),Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"4 box nghi ngờ: motorbike 0.33, person 0.52, person 0.60, person 0.42 mép phải; người duyệt đã xác nhận giữ cả 4"
+img_013.jpg,12,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,tuk-tuk #129 phủ đủ xe; #128 không trùng; người ngồi trong xe và xe máy phía sau chưa kiểm hết
+img_018.jpg,53,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,nhiều vật nhỏ <20px đã cảnh báo trong validate_labels; chỉ kiểm mức tổng quan
+img_022.jpg,15,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,ảnh tối; người nền và xe máy nhỏ chưa kiểm từng box
+img_023.jpg,10,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"ba tuk-tuk gán three_wheeler, khớp taxonomy; ô tô #266 và #269 gán car đúng"
+img_025.jpg,18,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"nhiều box người nhỏ chồng nhau ở giữa (#324, #330, #334, #335); chưa kiểm từng box"
+img_026.jpg,14,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"ảnh ban đêm nhiều xe máy che nhau; #344 person 0.58 và #345 person 0.55 nhỏ, khó xác nhận"
+img_027.jpg,23,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"người lái và xe máy gán tách riêng, khớp guideline; box người ở xa và nhỏ (#355, #358, #370) chưa kiểm hết"
+img_033.jpg,16,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"ô tô #455, #459, #460 gán car đúng; #453 bị cắt ở mép ảnh; cụm xe máy xa (#454, #456, #457) chưa kiểm từng box"
+img_035.jpg,33,Người dùng xác nhận đã duyệt bảng AI; AI hỗ trợ rà soát (không phải QC từng box),da_duyet,"#508 three_wheeler 0.48 là xe xích lô, cần đối chiếu guideline three_wheeler; cụm người và xe máy chồng nhiều (#503, #505, #509, #518, #519) chưa kiểm từng box"
